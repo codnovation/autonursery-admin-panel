@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { NbThemeModule, NbLayoutModule } from '@nebular/theme';
+import { NbEvaIconsModule } from '@nebular/eva-icons';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AdminModule} from './pages/admin/admin.module';
 import { AppComponent } from './app.component';
@@ -14,8 +17,11 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AdminModule
-  ], // might not be needed
+    NbThemeModule.forRoot({ name: 'default' }),
+    NbLayoutModule,
+    NbEvaIconsModule,
+    AdminModule,
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
